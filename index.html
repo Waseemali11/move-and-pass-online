@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,87 +19,104 @@
   --muted:#9ca9c8;
   --border:rgba(255,255,255,.1);
 }
-* {box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body {
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{
   margin:0;min-height:100vh;color:var(--text);
   font-family:Arial,Helvetica,sans-serif;
   background:radial-gradient(circle at 10% 0%,#202b50,transparent 35%),
-  radial-gradient(circle at 100% 100%,#25163f,transparent 35%),var(--bg);
+  radial-gradient(circle at 100% 100%,#25163f,transparent 35%),var(--bg)
 }
-button,input {font:inherit}
-button {border:0;cursor:pointer}
-button:disabled {opacity:.45;cursor:not-allowed}
-.container {width:min(100% - 24px,850px);margin:auto;padding:18px 0 40px}
-.header {text-align:center;padding:15px 0 22px}
-.logo {font-size:clamp(30px,8vw,46px);font-weight:1000;letter-spacing:2px;color:var(--gold)}
-.subtitle {color:var(--muted);font-size:12px;margin-top:7px;letter-spacing:2px}
-.panel {
+button,input{font:inherit}
+button{border:0;cursor:pointer}
+button:disabled{opacity:.4;cursor:not-allowed}
+.container{width:min(100% - 24px,850px);margin:auto;padding:18px 0 40px}
+.header{text-align:center;padding:15px 0 22px}
+.logo{font-size:clamp(30px,8vw,46px);font-weight:1000;letter-spacing:2px;color:var(--gold)}
+.subtitle{color:var(--muted);font-size:12px;margin-top:7px;letter-spacing:2px}
+.panel{
   background:linear-gradient(145deg,rgba(27,37,66,.97),rgba(17,23,43,.97));
   border:1px solid var(--border);border-radius:18px;padding:17px;margin-bottom:14px;
   box-shadow:0 12px 35px rgba(0,0,0,.2)
 }
-h2,h3 {margin:0 0 13px}
-h2 {font-size:20px}
-h3 {font-size:16px}
-.muted {color:var(--muted);font-size:13px;line-height:1.6}
-input {
+h2,h3{margin:0 0 13px}
+h2{font-size:20px}
+h3{font-size:16px}
+.muted{color:var(--muted);font-size:13px;line-height:1.6}
+input{
   width:100%;padding:15px;border:1px solid var(--border);
   background:#0c1327;color:white;border-radius:11px;outline:none;
   margin:7px 0;font-size:16px
 }
-input:focus {border-color:var(--cyan)}
-.btn {
+input:focus{border-color:var(--cyan)}
+.btn{
   display:block;width:100%;padding:15px;border-radius:11px;
   font-weight:800;margin-top:10px;color:#101525;background:var(--gold)
 }
-.btn.cyan {background:var(--cyan)}
-.btn.green {background:var(--green)}
-.btn.dark {color:white;background:#303d60;border:1px solid var(--border)}
-.btn.red {color:white;background:#a83249}
-.divider {height:1px;background:var(--border);margin:18px 0}
-.status {
+.btn.cyan{background:var(--cyan)}
+.btn.green{background:var(--green)}
+.btn.dark{color:white;background:#303d60;border:1px solid var(--border)}
+.divider{height:1px;background:var(--border);margin:18px 0}
+.status{
   padding:12px;border-radius:10px;background:#0b1328;color:var(--muted);
   font-size:13px;line-height:1.6;margin-bottom:14px;overflow-wrap:anywhere
 }
-.status.error {color:#ff9aa8;border:1px solid rgba(255,99,120,.3)}
-.status.success {color:#8df0b9;border:1px solid rgba(57,217,138,.25)}
-.hidden {display:none!important}
-.room-code {
+.status.error{color:#ff9aa8;border:1px solid rgba(255,99,120,.3)}
+.status.success{color:#8df0b9;border:1px solid rgba(57,217,138,.25)}
+.hidden{display:none!important}
+.room-code{
   font-size:30px;font-weight:1000;letter-spacing:6px;text-align:center;
   color:var(--gold);padding:13px;background:#0b1226;
   border:1px dashed rgba(255,200,87,.4);border-radius:12px;margin:10px 0;
   overflow-wrap:anywhere
 }
-.player {
+.player{
   display:flex;justify-content:space-between;align-items:center;gap:10px;
   padding:12px;margin:8px 0;background:#0d152b;
   border:1px solid var(--border);border-radius:12px
 }
-.player-info {min-width:0}
-.player-name {font-weight:800;overflow-wrap:anywhere}
-.player-detail {color:var(--muted);font-size:12px;margin-top:5px}
-.player-score {color:var(--gold);font-weight:900;white-space:nowrap}
-.badge {font-size:10px;padding:4px 7px;border-radius:20px;background:#263858;color:var(--cyan);margin-left:5px}
-.badge.host {color:var(--gold);background:#4a3821}
-.badge.me {color:var(--green);background:#17402f}
-.section-title {display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
-.pill {font-size:11px;color:var(--cyan);background:#142d42;padding:6px 9px;border-radius:20px}
-.grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.card {
+.player-info{min-width:0}
+.player-name{font-weight:800;overflow-wrap:anywhere}
+.player-detail{color:var(--muted);font-size:12px;margin-top:5px}
+.player-score{color:var(--gold);font-weight:900;white-space:nowrap}
+.badge{font-size:10px;padding:4px 7px;border-radius:20px;background:#263858;color:var(--cyan);margin-left:5px}
+.badge.host{color:var(--gold);background:#4a3821}
+.badge.me{color:var(--green);background:#17402f}
+.badge.turn{color:#101525;background:var(--gold)}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.pill{font-size:11px;color:var(--cyan);background:#142d42;padding:6px 9px;border-radius:20px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.card{
   min-height:105px;border:2px solid rgba(255,255,255,.12);border-radius:14px;
   padding:13px 7px;background:linear-gradient(145deg,#26375d,#151f3b);
   color:white;text-align:center;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:8px
+  align-items:center;justify-content:center;gap:8px;transition:.15s
 }
-.card.selected {border-color:var(--gold);background:linear-gradient(145deg,#59431f,#27314d);transform:translateY(-3px)}
-.card-label {font-size:17px;font-weight:900;overflow-wrap:anywhere}
-.card-points {font-size:12px;color:var(--gold)}
-.winner {text-align:center;padding:22px 10px;border:1px solid rgba(255,200,87,.4);border-radius:15px;background:linear-gradient(145deg,#42351f,#1a2541)}
-.winner-icon {font-size:45px}
-.winner-name {color:var(--gold);font-size:25px;font-weight:1000;margin:10px 0}
-.log {max-height:180px;overflow-y:auto;font-size:12px;color:var(--muted);line-height:1.8}
-.footer {text-align:center;color:#7784a5;font-size:11px;padding:15px}
-@media(min-width:600px) {.grid {grid-template-columns:repeat(4,minmax(0,1fr))}}
+.card.selected{border-color:var(--gold);background:linear-gradient(145deg,#59431f,#27314d);transform:translateY(-3px);box-shadow:0 0 18px #ffc85730}
+.card-label{font-size:17px;font-weight:900;overflow-wrap:anywhere}
+.card-points{font-size:12px;color:var(--gold)}
+.turn-banner{
+  padding:17px;border-radius:14px;text-align:center;
+  background:linear-gradient(135deg,#193e4d,#182b49);
+  border:1px solid rgba(64,217,237,.4);margin-bottom:15px
+}
+.turn-banner.mine{
+  background:linear-gradient(135deg,#493b1d,#28314c);
+  border-color:rgba(255,200,87,.6)
+}
+.turn-label{font-size:11px;letter-spacing:2px;color:var(--cyan);font-weight:bold}
+.turn-banner.mine .turn-label{color:var(--gold)}
+.turn-player{font-size:23px;font-weight:1000;margin:7px 0}
+.turn-description{font-size:12px;color:var(--muted)}
+.winner{
+  text-align:center;padding:22px 10px;border:1px solid rgba(255,200,87,.4);
+  border-radius:15px;background:linear-gradient(145deg,#42351f,#1a2541)
+}
+.winner-icon{font-size:45px}
+.winner-name{color:var(--gold);font-size:25px;font-weight:1000;margin:10px 0}
+.log{max-height:220px;overflow-y:auto;font-size:12px;color:var(--muted);line-height:1.8}
+.log div{padding:4px 0;border-bottom:1px solid #ffffff0a}
+.footer{text-align:center;color:#7784a5;font-size:11px;padding:15px}
+@media(min-width:600px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 </style>
 </head>
 
@@ -120,7 +138,7 @@ input:focus {border-color:var(--cyan)}
   <div class="divider"></div>
   <h3>Join Existing Room</h3>
   <input id="joinCode" maxlength="8" placeholder="ENTER 8-CHARACTER ROOM CODE"
-  style="text-transform:uppercase;letter-spacing:3px;text-align:center">
+    style="text-transform:uppercase;letter-spacing:3px;text-align:center">
   <button class="btn cyan" id="joinButton">JOIN ROOM</button>
 </section>
 
@@ -130,9 +148,11 @@ input:focus {border-color:var(--cyan)}
       <h2>🏠 Game Room</h2>
       <span class="pill" id="roomStatus">WAITING</span>
     </div>
+
     <div class="muted">Your Room Code</div>
     <div class="room-code" id="roomCodeDisplay">--------</div>
     <button class="btn dark" id="copyButton">COPY ROOM CODE</button>
+
     <div class="divider"></div>
     <div class="section-title">
       <h3>👥 Players</h3>
@@ -145,15 +165,35 @@ input:focus {border-color:var(--cyan)}
   </div>
 
   <div id="gamePanel" class="hidden">
+
     <div class="panel">
       <div class="section-title">
-        <h2>🃏 Your Cards</h2>
+        <h2>🎯 Current Turn</h2>
         <span class="pill" id="roundDisplay">ROUND 1</span>
       </div>
-      <p class="muted" id="gameInstructions">Select one card and pass it clockwise.</p>
+
+      <div id="turnBanner" class="turn-banner">
+        <div class="turn-label" id="turnLabel">NEXT PLAYER'S TURN</div>
+        <div class="turn-player" id="turnPlayerName">Player</div>
+        <div class="turn-description" id="turnDescription">Waiting for player's move.</div>
+      </div>
+
+      <div class="section-title">
+        <h2>🃏 Your Cards</h2>
+        <span class="pill" id="handCount">0 CARDS</span>
+      </div>
+
+      <p class="muted" id="gameInstructions">
+        Select one card and pass it to the next player.
+      </p>
+
       <div id="myCards" class="grid"></div>
-      <button id="passButton" class="btn cyan">PASS SELECTED CARD</button>
-      <div id="passStatus" class="status">Select one card to pass.</div>
+
+      <button id="passButton" class="btn cyan" disabled>
+        PASS SELECTED CARD
+      </button>
+
+      <div id="passStatus" class="status">Waiting for your turn.</div>
     </div>
 
     <div id="winnerPanel" class="panel hidden">
@@ -163,13 +203,16 @@ input:focus {border-color:var(--cyan)}
         <div class="winner-name" id="winnerName">Winner</div>
         <div id="winnerDetails" class="muted"></div>
       </div>
-      <button id="nextRoundButton" class="btn green hidden">START NEXT ROUND</button>
+      <button id="nextRoundButton" class="btn green hidden">
+        START NEXT ROUND
+      </button>
       <div id="nextRoundMessage" class="muted" style="margin-top:12px;text-align:center"></div>
     </div>
 
     <div class="panel">
       <div class="section-title">
-        <h3>🏅 Scoreboard</h3><span class="pill">TOTAL POINTS</span>
+        <h3>🏅 Scoreboard</h3>
+        <span class="pill">TOTAL POINTS</span>
       </div>
       <div id="scoreboard"></div>
     </div>
@@ -181,10 +224,14 @@ input:focus {border-color:var(--cyan)}
   </div>
 </section>
 
-<div class="footer">MOVE & PASS ONLINE • FIREBASE MULTIPLAYER<br>Updated Edition</div>
+<div class="footer">MOVE & PASS ONLINE • SEQUENTIAL MULTIPLAYER EDITION</div>
 </div>
 
 <script type="module">
+
+// ============================================
+// 1. FIREBASE
+// ============================================
 
 import {initializeApp}
 from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
@@ -197,10 +244,6 @@ import {
 }
 from "https://www.gstatic.com/firebasejs/13.1.0/firebase-database.js";
 
-// =====================================
-// FIREBASE CONFIG
-// =====================================
-
 const firebaseConfig = {
   apiKey: "AIzaSyBycoQHVd9qpL_fRddFGVnElTaQVkPV9Ck",
   authDomain: "move-and-pass-online.firebaseapp.com",
@@ -211,18 +254,18 @@ const firebaseConfig = {
   appId: "1:89267761664:web:847abfb12519e595e1dee5"
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getDatabase(app);
+const app=initializeApp(firebaseConfig);
+const auth=getAuth(app);
+const db=getDatabase(app);
 
-// =====================================
-// GAME SETTINGS
-// =====================================
+// ============================================
+// 2. GAME SETTINGS
+// ============================================
 
-const MAX_PLAYERS = 25;
-const MIN_PLAYERS = 3;
+const MAX_PLAYERS=25;
+const MIN_PLAYERS=3;
 
-const CITY_THINGS = [
+const CITY_THINGS=[
   "Lahore","Karachi","Multan","Islamabad","Peshawar",
   "Quetta","Mianwali","Sialkot","London","Dubai",
   "Tokyo","New York","Apple","Mango","Banana",
@@ -230,95 +273,97 @@ const CITY_THINGS = [
   "Football","Car","Airplane","Rocket","Diamond"
 ];
 
-// =====================================
-// APP STATE
-// =====================================
+// ============================================
+// 3. STATE
+// ============================================
 
-let currentUser = null;
-let currentRoomCode = null;
-let currentRoomRef = null;
-let roomData = null;
-let stopRoomListener = null;
-let selectedCardId = null;
-let resolving = false;
+let currentUser=null;
+let currentRoomCode=null;
+let currentRoomRef=null;
+let roomData=null;
+let stopRoomListener=null;
+let selectedCardId=null;
+let busy=false;
 
-const $ = id => document.getElementById(id);
+const $=id=>document.getElementById(id);
 
-function escapeHTML(value) {
-  return String(value ?? "").replace(/[&<>"']/g, c => ({
+function escapeHTML(value){
+  return String(value??"").replace(/[&<>"']/g,c=>({
     "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
   })[c]);
 }
 
-function status(message,type="") {
-  $("connectionStatus").textContent = message;
-  $("connectionStatus").className = "status " + type;
+function showStatus(message,type=""){
+  $("connectionStatus").textContent=message;
+  $("connectionStatus").className="status "+type;
 }
 
-function reportError(error) {
+function showError(error){
   console.error(error);
-  status(
-    "ERROR: " + (error?.code || "UNKNOWN_ERROR") +
-    " — " + (error?.message || String(error)),
+  showStatus(
+    "ERROR: "+(error?.code||"UNKNOWN_ERROR")+" — "+
+    (error?.message||String(error)),
     "error"
   );
 }
 
-function playersArray(players) {
-  return Object.values(players || {}).sort(
-    (a,b) => Number(a.joinOrder || 0) - Number(b.joinOrder || 0)
+function getPlayers(players){
+  return Object.values(players||{}).sort(
+    (a,b)=>Number(a.joinOrder||0)-Number(b.joinOrder||0)
   );
 }
 
-function shuffle(array) {
-  const a = [...array];
-  for (let i=a.length-1;i>0;i--) {
-    const j=Math.floor(Math.random()*(i+1));
-    [a[i],a[j]]=[a[j],a[i]];
-  }
-  return a;
+function getMe(){
+  return roomData?.players?.[currentUser?.uid]||null;
 }
 
-function makeCode() {
+function shuffle(array){
+  const result=[...array];
+  for(let i=result.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [result[i],result[j]]=[result[j],result[i]];
+  }
+  return result;
+}
+
+function makeCode(){
   const chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
   let code="";
-  for(let i=0;i<8;i++) code+=chars[Math.floor(Math.random()*chars.length)];
+  for(let i=0;i<8;i++){
+    code+=chars[Math.floor(Math.random()*chars.length)];
+  }
   return code;
 }
 
-function myPlayer() {
-  return roomData?.players?.[currentUser?.uid] || null;
-}
+// ============================================
+// 4. AUTHENTICATION
+// ============================================
 
-// =====================================
-// AUTHENTICATION
-// =====================================
-
-async function initialize() {
-  try {
-    status("Connecting to Firebase Authentication...");
+async function initialize(){
+  try{
+    showStatus("Connecting to Firebase...");
     const result=await signInAnonymously(auth);
     currentUser=result.user;
-    status("Firebase connected. Authentication successful.","success");
-  } catch(error) {
-    reportError(error);
+    showStatus("Firebase connected successfully.","success");
+  }catch(error){
+    showError(error);
   }
 }
 
-// =====================================
-// ROOM LISTENER
-// =====================================
+// ============================================
+// 5. ROOM LISTENER
+// ============================================
 
-function watchRoom(code) {
+function watchRoom(code){
   if(stopRoomListener) stopRoomListener();
 
   currentRoomCode=code;
   currentRoomRef=ref(db,"rooms/"+code);
 
   stopRoomListener=onValue(currentRoomRef,snapshot=>{
-    if(!snapshot.exists()) {
+    if(!snapshot.exists()){
       roomData=null;
-      status("ROOM NOT FOUND in Firebase: "+code,"error");
+      showStatus("Room not found: "+code,"error");
       return;
     }
 
@@ -330,49 +375,46 @@ function watchRoom(code) {
 
     renderRoom();
 
-    status("Connected to room "+code+" | Firebase: "+firebaseConfig.projectId,"success");
+    showStatus("Connected to room "+code,"success");
 
-    tryResolvePasses();
   },error=>{
-    reportError(error);
+    showError(error);
   });
 }
 
-// =====================================
-// CREATE ROOM
-// =====================================
+// ============================================
+// 6. CREATE ROOM
+// ============================================
 
-async function createRoom() {
-  try {
+async function createRoom(){
+  try{
     if(!currentUser) throw new Error("Firebase authentication is not ready.");
 
     const name=$("playerName").value.trim();
     if(!name) return alert("Enter your name.");
 
-    status("Creating a new room...");
+    showStatus("Creating room...");
 
-    let code="";
+    let code=null;
     let roomRef=null;
-    let created=false;
 
-    for(let i=0;i<8;i++) {
+    for(let i=0;i<10;i++){
       const candidate=makeCode();
       const candidateRef=ref(db,"rooms/"+candidate);
       const existing=await get(candidateRef);
 
-      if(!existing.exists()) {
+      if(!existing.exists()){
         code=candidate;
         roomRef=candidateRef;
-        created=true;
         break;
       }
     }
 
-    if(!created) throw new Error("Could not generate a unique room code. Try again.");
+    if(!code) throw new Error("Could not create a unique room.");
 
-    const hostPlayer={
+    const host={
       uid:currentUser.uid,
-      name,
+      name:name,
       city:CITY_THINGS[0],
       points:1000,
       joinOrder:0,
@@ -386,353 +428,360 @@ async function createRoom() {
       hostUid:currentUser.uid,
       status:"waiting",
       createdAt:Date.now(),
-      players:{[currentUser.uid]:hostPlayer},
+      players:{[currentUser.uid]:host},
       game:null
     });
 
     watchRoom(code);
 
-  } catch(error) {
-    reportError(error);
+  }catch(error){
+    showError(error);
   }
 }
 
-// =====================================
-// JOIN ROOM — FIXED
-// =====================================
+// ============================================
+// 7. JOIN ROOM
+// ============================================
 
-async function joinRoom() {
-  try {
+async function joinRoom(){
+  try{
     if(!currentUser) throw new Error("Firebase authentication is not ready.");
 
     const name=$("playerName").value.trim();
     const code=$("joinCode").value.trim().toUpperCase();
 
-    if(!name) return alert("Enter your player name.");
-
-    if(!/^[A-HJ-NP-Z2-9]{8}$/.test(code)) {
+    if(!name) return alert("Enter your name.");
+    if(!/^[A-HJ-NP-Z2-9]{8}$/.test(code)){
       return alert("Enter a valid 8-character room code.");
     }
 
-    status("Checking room "+code+" directly in Firebase...");
+    showStatus("Checking room "+code+"...");
 
     const roomRef=ref(db,"rooms/"+code);
-
-    // Read the room from Firebase first.
     const snapshot=await get(roomRef);
 
-    if(!snapshot.exists()) {
-      throw new Error(
-        "ROOM NOT FOUND. Code "+code+
-        " was not found in Firebase project "+firebaseConfig.projectId+
-        ". Check the host's room code and database URL."
-      );
+    if(!snapshot.exists()){
+      throw new Error("This room code does not exist.");
     }
 
     const room=snapshot.val();
 
-    if(room.status!=="waiting" && !room.players?.[currentUser.uid]) {
-      throw new Error("This game has already started. You cannot join now.");
-    }
-
-    const players=room.players || {};
-
-    // Existing player can reconnect.
-    if(players[currentUser.uid]) {
-      await update(ref(db,"rooms/"+code+"/players/"+currentUser.uid),{
-        name:name
-      });
-
+    if(room.players?.[currentUser.uid]){
+      await update(
+        ref(db,"rooms/"+code+"/players/"+currentUser.uid),
+        {name:name}
+      );
       watchRoom(code);
-      status("Reconnected to room "+code,"success");
       return;
     }
 
-    const count=Object.keys(players).length;
-
-    if(count>=MAX_PLAYERS) {
-      throw new Error("This room is full. Maximum 25 players.");
+    if(room.status!=="waiting"){
+      throw new Error("This game has already started.");
     }
 
-    if(count>=CITY_THINGS.length) {
-      throw new Error("No more City/Thing assignments are available.");
-    }
+    const playersRef=ref(db,"rooms/"+code+"/players");
 
-    // Assign next available order.
-    const usedOrders=Object.values(players).map(
-      p=>Number(p.joinOrder)
-    );
+    // Atomic player registration on the players node.
+    const result=await runTransaction(playersRef,current=>{
+      const list=current||{};
 
-    let joinOrder=0;
-    while(usedOrders.includes(joinOrder)) joinOrder++;
+      if(list[currentUser.uid]){
+        list[currentUser.uid].name=name;
+        return list;
+      }
 
-    if(joinOrder>=MAX_PLAYERS) {
-      throw new Error("No player slots are available.");
-    }
+      const count=Object.keys(list).length;
+      if(count>=MAX_PLAYERS) return;
 
-    const newPlayer={
-      uid:currentUser.uid,
-      name:name,
-      city:CITY_THINGS[joinOrder],
-      points:(joinOrder+1)*1000,
-      joinOrder:joinOrder,
-      score:0,
-      hand:[],
-      joinedAt:Date.now()
-    };
+      const used=Object.values(list).map(p=>Number(p.joinOrder));
+      let order=0;
+      while(used.includes(order)) order++;
 
-    // IMPORTANT:
-    // Save directly to this player's UID path.
-    // No transaction on the entire room is used for joining.
-    const playerRef=ref(
-      db,"rooms/"+code+"/players/"+currentUser.uid
-    );
+      if(order>=MAX_PLAYERS) return;
 
-    await set(playerRef,newPlayer);
+      list[currentUser.uid]={
+        uid:currentUser.uid,
+        name:name,
+        city:CITY_THINGS[order],
+        points:(order+1)*1000,
+        joinOrder:order,
+        score:0,
+        hand:[],
+        joinedAt:Date.now()
+      };
 
-    // Verify that Firebase saved the player.
-    const verify=await get(playerRef);
+      return list;
+    });
 
-    if(!verify.exists()) {
-      throw new Error("Firebase did not save your player record.");
+    if(!result.committed){
+      throw new Error("Could not join this room. Please try again.");
     }
 
     watchRoom(code);
-    status("Successfully joined room "+code,"success");
 
-  } catch(error) {
-    reportError(error);
+  }catch(error){
+    showError(error);
   }
 }
 
-// =====================================
-// CARD DECK
-// =====================================
+// ============================================
+// 8. CREATE AND DEAL DECK
+// ============================================
 
-function dealPlayers(players,round) {
-  let deck=[];
+function dealCards(players,round){
+  const deck=[];
 
   players.forEach(player=>{
-    for(let i=0;i<4;i++) {
+    for(let i=0;i<4;i++){
       deck.push({
         id:round+"_"+player.uid+"_"+i+"_"+Math.random().toString(36).slice(2,9),
         ownerUid:player.uid,
         label:player.city,
-        points:player.points
+        points:Number(player.points)
       });
     }
   });
 
-  deck=shuffle(deck);
-
+  const mixed=shuffle(deck);
   const updated={};
 
   players.forEach((player,index)=>{
     updated[player.uid]={
       ...player,
-      hand:deck.slice(index*4,index*4+4)
+      hand:mixed.slice(index*4,index*4+4)
     };
   });
 
   return updated;
 }
 
-// =====================================
-// START GAME / NEXT ROUND
-// =====================================
+// ============================================
+// 9. START ROUND
+// ============================================
 
-async function startRound(next=false) {
-  try {
-    if(!currentRoomRef || !roomData) throw new Error("Room is not connected.");
+async function startRound(nextRound=false){
+  try{
+    if(!currentRoomRef) throw new Error("Room is not connected.");
 
     const result=await runTransaction(currentRoomRef,current=>{
       if(!current) return;
 
-      const players=playersArray(current.players);
-
+      const players=getPlayers(current.players);
       if(players.length<MIN_PLAYERS) return;
 
-      if(!next) {
-        if(current.hostUid!==currentUser.uid) return;
+      let starterUid;
+
+      if(!nextRound){
         if(current.status!=="waiting") return;
-      } else {
+        if(current.hostUid!==currentUser.uid) return;
+        starterUid=current.hostUid;
+      }else{
         if(current.status!=="roundOver") return;
         if(current.game?.winnerUid!==currentUser.uid) return;
+        starterUid=current.game.winnerUid;
       }
 
-      const round=next?(Number(current.game?.round||1)+1):1;
+      const round=nextRound
+        ?Number(current.game.round||1)+1
+        :1;
 
-      current.players=dealPlayers(players,round);
+      current.players=dealCards(players,round);
       current.status="playing";
+
       current.game={
         round:round,
-        turn:1,
-        passChoices:{},
+        turnNumber:1,
+        turnUid:starterUid,
+        starterUid:starterUid,
         winnerUid:null,
         winningLabel:null,
         awardedPoints:0,
-        roundStarterUid:next?current.game.winnerUid:current.hostUid,
+        history:[
+          {
+            message:"Round "+round+" started. "+(current.players[starterUid]?.name||"Player")+" has the first turn.",
+            time:Date.now()
+          }
+        ],
         startedAt:Date.now()
       };
 
       return current;
     });
 
-    if(!result.committed) {
-      throw new Error("Could not start the round. Check host permission and player count.");
+    if(!result.committed){
+      throw new Error("Unable to start the round. Check host or winner permission.");
     }
 
     selectedCardId=null;
 
-  } catch(error) {
-    reportError(error);
+  }catch(error){
+    showError(error);
   }
 }
 
-// =====================================
-// SELECTED CARD SUBMISSION
-// =====================================
+// ============================================
+// 10. CHECK FOUR MATCHING CARDS
+// ============================================
 
-async function submitPass() {
-  try {
-    if(!selectedCardId) return alert("Select one card first.");
-    if(!roomData || roomData.status!=="playing") throw new Error("The game is not active.");
+function findFourMatching(hand){
+  const counts={};
 
-    const player=myPlayer();
-    if(!player) throw new Error("Your player record is missing.");
+  for(const card of hand){
+    counts[card.label]=(counts[card.label]||0)+1;
 
-    if(roomData.game?.passChoices?.[currentUser.uid]) {
-      throw new Error("You have already passed a card this turn.");
+    if(counts[card.label]>=4){
+      return card;
+    }
+  }
+
+  return null;
+}
+
+// ============================================
+// 11. SEND CARD TO NEXT PLAYER
+// ============================================
+
+async function sendCard(){
+  try{
+    if(busy) return;
+
+    if(!selectedCardId){
+      return alert("Please select a card first.");
     }
 
-    const exists=(player.hand||[]).some(card=>card.id===selectedCardId);
-    if(!exists) throw new Error("Selected card was not found.");
+    if(!currentRoomRef || !roomData){
+      throw new Error("Room is not connected.");
+    }
 
-    const choiceRef=ref(
-      db,"rooms/"+currentRoomCode+"/game/passChoices/"+currentUser.uid
-    );
+    if(roomData.status!=="playing"){
+      throw new Error("The game is not currently playing.");
+    }
 
-    // Write this player's selected card.
-    await set(choiceRef,selectedCardId);
+    if(roomData.game?.turnUid!==currentUser.uid){
+      throw new Error("It is not your turn.");
+    }
 
-    selectedCardId=null;
-    status("Card submitted. Waiting for other players.","success");
+    busy=true;
+    $("passButton").disabled=true;
 
-  } catch(error) {
-    reportError(error);
-  }
-}
+    const cardId=selectedCardId;
 
-// =====================================
-// RESOLVE PASSES
-// =====================================
-
-async function tryResolvePasses() {
-  if(resolving || !roomData || roomData.status!=="playing") return;
-
-  const players=playersArray(roomData.players);
-  const choices=roomData.game?.passChoices || {};
-
-  if(players.length<MIN_PLAYERS) return;
-
-  const allSubmitted=players.every(p=>!!choices[p.uid]);
-
-  if(!allSubmitted) return;
-
-  resolving=true;
-
-  try {
     const result=await runTransaction(currentRoomRef,current=>{
       if(!current || current.status!=="playing") return;
 
-      const list=playersArray(current.players);
-      const submitted=current.game?.passChoices || {};
+      const game=current.game;
+      const players=getPlayers(current.players);
 
-      if(!list.every(p=>!!submitted[p.uid])) return;
+      if(!game || game.turnUid!==currentUser.uid) return;
+      if(players.length<MIN_PLAYERS) return;
 
-      const newHands={};
+      const currentIndex=players.findIndex(
+        p=>p.uid===currentUser.uid
+      );
 
-      // Remove the submitted card from each player's hand.
-      for(const player of list) {
-        const hand=player.hand||[];
-        const chosenId=submitted[player.uid];
+      if(currentIndex<0) return;
 
-        if(hand.length!==4) return;
+      const sender=players[currentIndex];
+      const receiver=players[(currentIndex+1)%players.length];
 
-        const chosen=hand.find(card=>card.id===chosenId);
-        if(!chosen) return;
+      const senderHand=current.players[sender.uid].hand||[];
+      const cardIndex=senderHand.findIndex(c=>c.id===cardId);
 
-        newHands[player.uid]=hand.filter(card=>card.id!==chosenId);
+      if(cardIndex<0) return;
+
+      // Remove one card from the active player.
+      const [movingCard]=senderHand.splice(cardIndex,1);
+
+      // Add that card to the next player's hand.
+      if(!current.players[receiver.uid].hand){
+        current.players[receiver.uid].hand=[];
       }
 
-      // Pass cards clockwise.
-      for(let i=0;i<list.length;i++) {
-        const sender=list[i];
-        const receiver=list[(i+1)%list.length];
-        const card=sender.hand.find(c=>c.id===submitted[sender.uid]);
+      current.players[receiver.uid].hand.push(movingCard);
 
-        newHands[receiver.uid].push(card);
-      }
+      // Check if receiver now has four matching cards.
+      const winningCard=findFourMatching(
+        current.players[receiver.uid].hand
+      );
 
-      for(const player of list) {
-        current.players[player.uid].hand=newHands[player.uid];
-      }
+      const history=Array.isArray(game.history)?game.history:[];
+      const senderName=current.players[sender.uid].name;
+      const receiverName=current.players[receiver.uid].name;
 
-      // Check four matching cards.
-      let winner=null;
-      let winningCard=null;
+      if(winningCard){
 
-      for(const player of list) {
-        const hand=newHands[player.uid];
-
-        if(hand.length===4 && hand.every(card=>card.label===hand[0].label)) {
-          winner=player;
-          winningCard=hand[0];
-          break;
-        }
-      }
-
-      current.game.turn=Number(current.game.turn||1)+1;
-      current.game.passChoices={};
-
-      if(winner) {
+        // Award only one matching card's points.
         const award=Number(winningCard.points)||0;
 
-        current.players[winner.uid].score=
-          (Number(current.players[winner.uid].score)||0)+award;
+        current.players[receiver.uid].score=
+          (Number(current.players[receiver.uid].score)||0)+award;
 
         current.status="roundOver";
-        current.game.winnerUid=winner.uid;
-        current.game.winningLabel=winningCard.label;
-        current.game.awardedPoints=award;
-        current.game.finishedAt=Date.now();
+        game.winnerUid=receiver.uid;
+        game.winningLabel=winningCard.label;
+        game.awardedPoints=award;
+        game.finishedAt=Date.now();
+
+        history.push({
+          message:senderName+" passed "+movingCard.label+" to "+receiverName+". "+receiverName+" won the round!",
+          time:Date.now()
+        });
+
+      }else{
+
+        // The receiving player gets the next turn.
+        game.turnUid=receiver.uid;
+        game.turnNumber=Number(game.turnNumber||1)+1;
+
+        history.push({
+          message:senderName+" passed one card to "+receiverName+". Now it is "+receiverName+"'s turn.",
+          time:Date.now()
+        });
       }
+
+      game.history=history.slice(-30);
 
       return current;
     });
 
-    if(!result.committed) {
-      // Another connected client may already have resolved the turn.
-      return;
+    if(!result.committed){
+      throw new Error("Card could not be sent. Check your turn and selected card.");
     }
 
     selectedCardId=null;
 
-  } catch(error) {
-    reportError(error);
-  } finally {
-    resolving=false;
+  }catch(error){
+    showError(error);
+  }finally{
+    busy=false;
+    if(roomData) renderRoom();
   }
 }
 
-// =====================================
-// RENDER ROOM
-// =====================================
+// ============================================
+// 12. COPY ROOM CODE
+// ============================================
 
-function renderRoom() {
+async function copyCode(){
+  const code=roomData?.roomCode||currentRoomCode;
+  if(!code) return;
+
+  try{
+    await navigator.clipboard.writeText(code);
+    showStatus("Room code copied: "+code,"success");
+  }catch{
+    alert("Room code: "+code);
+  }
+}
+
+// ============================================
+// 13. RENDER ROOM
+// ============================================
+
+function renderRoom(){
   if(!roomData) return;
 
-  const players=playersArray(roomData.players);
+  const players=getPlayers(roomData.players);
   const isHost=roomData.hostUid===currentUser.uid;
   const waiting=roomData.status==="waiting";
 
@@ -741,19 +790,25 @@ function renderRoom() {
   $("roomStatus").textContent=String(roomData.status).toUpperCase();
 
   $("playersList").innerHTML=players.map(p=>{
-    const host=p.uid===roomData.hostUid;
-    const me=p.uid===currentUser.uid;
+    const isMe=p.uid===currentUser.uid;
+    const isHostPlayer=p.uid===roomData.hostUid;
+    const isTurn=roomData.status==="playing" &&
+      roomData.game?.turnUid===p.uid;
+
+    const cardCount=(p.hand||[]).length;
 
     return `
       <div class="player">
         <div class="player-info">
           <div class="player-name">
             ${escapeHTML(p.name)}
-            ${host?'<span class="badge host">HOST</span>':""}
-            ${me?'<span class="badge me">YOU</span>':""}
+            ${isHostPlayer?'<span class="badge host">HOST</span>':""}
+            ${isMe?'<span class="badge me">YOU</span>':""}
+            ${isTurn?'<span class="badge turn">TURN</span>':""}
           </div>
           <div class="player-detail">
             ${escapeHTML(p.city)} • ${Number(p.points).toLocaleString()} points
+            ${waiting?"":" • "+cardCount+" cards"}
           </div>
         </div>
         <div class="player-score">${Number(p.score||0).toLocaleString()}</div>
@@ -764,40 +819,71 @@ function renderRoom() {
   $("waitingMessage").classList.toggle("hidden",!waiting);
 
   $("startButton").classList.toggle(
-    "hidden",!(waiting && isHost && players.length>=MIN_PLAYERS)
+    "hidden",
+    !(waiting && isHost && players.length>=MIN_PLAYERS)
   );
 
-  if(waiting) {
+  if(waiting){
     $("hostMessage").textContent=isHost
       ?(players.length<MIN_PLAYERS
         ?"You are host. Waiting for "+(MIN_PLAYERS-players.length)+" more player(s)."
-        :"You are host. You can start the game.")
+        :"You are host. Start the game when ready.")
       :"Waiting for the host to start the game.";
-  } else {
+  }else{
     $("hostMessage").textContent="";
   }
 
-  const active=roomData.status==="playing"||roomData.status==="roundOver";
+  const active=roomData.status==="playing" ||
+    roomData.status==="roundOver";
 
   $("gamePanel").classList.toggle("hidden",!active);
 
-  if(active) renderGame(players,myPlayer());
+  if(active) renderGame(players);
 }
 
-// =====================================
-// RENDER GAME
-// =====================================
+// ============================================
+// 14. RENDER TURN AND CARDS
+// ============================================
 
-function renderGame(players,player) {
+function renderGame(players){
   const game=roomData.game||{};
-  const choices=game.passChoices||{};
+  const me=getMe();
+  const hand=me?.hand||[];
   const roundOver=roomData.status==="roundOver";
-  const alreadyPassed=!!choices[currentUser.uid];
-  const hand=player?.hand||[];
+  const isMyTurn=!roundOver && game.turnUid===currentUser.uid;
+
+  const activePlayer=roomData.players?.[game.turnUid];
 
   $("roundDisplay").textContent="ROUND "+(game.round||1);
+  $("handCount").textContent=hand.length+" CARDS";
 
-  if(!hand.some(c=>c.id===selectedCardId)) selectedCardId=null;
+  // Turn indicator visible to every player.
+  $("turnPlayerName").textContent=roundOver
+    ?"ROUND COMPLETED"
+    :(activePlayer?.name||"Unknown player");
+
+  $("turnBanner").classList.toggle("mine",isMyTurn);
+
+  $("turnLabel").textContent=roundOver
+    ?"ROUND FINISHED"
+    :(isMyTurn?"YOUR TURN":"NEXT PLAYER'S TURN");
+
+  $("turnDescription").textContent=roundOver
+    ?"Waiting for the next round."
+    :(isMyTurn
+      ?"It is your turn. Select one card and send it."
+      ?"Waiting for "+(activePlayer?.name||"the next player")+" to send a card.");
+
+  $("gameInstructions").textContent=roundOver
+    ?"This round is complete."
+    :(isMyTurn
+      ?"Your turn! Select one card and pass it to the next player."
+      ?"You can watch the game. It is "+(activePlayer?.name||"another player's")+" turn.");
+
+  // Show only this player's own cards.
+  if(!hand.some(c=>c.id===selectedCardId)){
+    selectedCardId=null;
+  }
 
   $("myCards").innerHTML=hand.map(card=>{
     const selected=card.id===selectedCardId;
@@ -805,71 +891,64 @@ function renderGame(players,player) {
     return `
       <button class="card ${selected?"selected":""}"
         data-card-id="${escapeHTML(card.id)}"
-        ${alreadyPassed||roundOver?"disabled":""}>
+        ${!isMyTurn||roundOver?"disabled":""}>
         <div class="card-label">${escapeHTML(card.label)}</div>
         <div class="card-points">${Number(card.points).toLocaleString()} points</div>
-        <div class="muted">TAP TO SELECT</div>
+        <div class="muted">${selected?"SELECTED":"TAP TO SELECT"}</div>
       </button>
     `;
   }).join("");
 
   $("passButton").classList.toggle("hidden",roundOver);
-  $("passButton").disabled=alreadyPassed||!selectedCardId;
+  $("passButton").disabled=!isMyTurn||!selectedCardId||busy;
 
-  if(roundOver) {
-    $("passStatus").textContent="This round is complete.";
-  } else if(alreadyPassed) {
-    $("passStatus").textContent="Your card has been submitted. Waiting for others.";
-  } else {
+  if(roundOver){
+    $("passStatus").textContent="Round finished.";
+  }else if(isMyTurn){
+    $("passStatus").textContent=selectedCardId
+      ?"Card selected. Press PASS SELECTED CARD."
+      :"It is your turn. Select one card.";
+  }else{
     $("passStatus").textContent=
-      Object.keys(choices).length+" / "+players.length+" players submitted.";
+      "Waiting for "+(activePlayer?.name||"the next player")+".";
   }
 
-  $("gameInstructions").textContent=roundOver
-    ?"The round has finished."
-    :"Select one card and pass it clockwise.";
-
   renderScoreboard(players);
+  renderHistory(game.history||[]);
 
   $("winnerPanel").classList.toggle("hidden",!roundOver);
 
-  if(roundOver) {
+  if(roundOver){
     const winner=roomData.players[game.winnerUid];
 
     $("winnerName").textContent=winner?.name||"Winner";
     $("winnerDetails").textContent=
-      "Four matching "+(game.winningLabel||"")+" cards! Awarded points: "+
-      Number(game.awardedPoints||0).toLocaleString();
+      "Four matching "+(game.winningLabel||"")+" cards! Awarded "+
+      Number(game.awardedPoints||0).toLocaleString()+" points.";
 
     const isWinner=game.winnerUid===currentUser.uid;
 
     $("nextRoundButton").classList.toggle("hidden",!isWinner);
-    $("nextRoundMessage").textContent=isWinner
-      ?"You won! You can start the next round."
-      :"Waiting for the previous round winner.";
-  }
 
-  $("activityLog").innerHTML=`
-    <div>• Round ${Number(game.round||1)}</div>
-    <div>• Turn ${Number(game.turn||1)}</div>
-    <div>• Pass direction: Clockwise</div>
-    ${roundOver?'<div>• Round completed.</div>':""}
-  `;
+    $("nextRoundMessage").textContent=isWinner
+      ?"Congratulations! You can start the next round."
+      :"Waiting for the winner to start the next round.";
+  }
 }
 
-// =====================================
-// SCOREBOARD
-// =====================================
+// ============================================
+// 15. SCOREBOARD
+// ============================================
 
-function renderScoreboard(players) {
+function renderScoreboard(players){
   const sorted=[...players].sort(
     (a,b)=>(Number(b.score)||0)-(Number(a.score)||0)
   );
 
-  $("scoreboard").innerHTML=sorted.map((p,i)=>`
+  $("scoreboard").innerHTML=sorted.map((p,index)=>`
     <div class="player">
       <div class="player-info">
-        <div class="player-name">${i+1}. ${escapeHTML(p.name)}</div>
+        <div class="player-name">${index+1}. ${escapeHTML(p.name)}</div>
         <div class="player-detail">${escapeHTML(p.city)}</div>
       </div>
       <div class="player-score">${Number(p.score||0).toLocaleString()}</div>
@@ -877,32 +956,30 @@ function renderScoreboard(players) {
   `).join("");
 }
 
-// =====================================
-// COPY ROOM CODE
-// =====================================
+// ============================================
+// 16. ACTIVITY HISTORY
+// ============================================
 
-async function copyCode() {
-  const code=roomData?.roomCode||currentRoomCode;
-  if(!code) return;
+function renderHistory(history){
+  const list=[...(history||[])].reverse();
 
-  try {
-    await navigator.clipboard.writeText(code);
-    status("Room code copied: "+code,"success");
-  } catch {
-    alert("Your room code is: "+code);
-  }
+  $("activityLog").innerHTML=list.length
+    ?list.map(item=>`
+      <div>• ${escapeHTML(item.message)}</div>
+    `).join("")
+    :"<div>Game activity will appear here.</div>";
 }
 
-// =====================================
-// BUTTON EVENTS
-// =====================================
+// ============================================
+// 17. EVENTS
+// ============================================
 
 $("createButton").addEventListener("click",createRoom);
 $("joinButton").addEventListener("click",joinRoom);
 $("copyButton").addEventListener("click",copyCode);
 $("startButton").addEventListener("click",()=>startRound(false));
 $("nextRoundButton").addEventListener("click",()=>startRound(true));
-$("passButton").addEventListener("click",submitPass);
+$("passButton").addEventListener("click",sendCard);
 
 $("joinCode").addEventListener("input",()=>{
   $("joinCode").value=$("joinCode").value.toUpperCase();
@@ -914,17 +991,17 @@ $("joinCode").addEventListener("keydown",event=>{
 
 $("myCards").addEventListener("click",event=>{
   const card=event.target.closest("[data-card-id]");
-  if(!card || roomData?.status!=="playing") return;
+  if(!card || !roomData || roomData.status!=="playing") return;
 
-  if(roomData.game?.passChoices?.[currentUser.uid]) return;
+  if(roomData.game?.turnUid!==currentUser.uid) return;
 
   selectedCardId=card.dataset.cardId;
   renderRoom();
 });
 
-// =====================================
-// START APPLICATION
-// =====================================
+// ============================================
+// 18. START APPLICATION
+// ============================================
 
 initialize();
 
