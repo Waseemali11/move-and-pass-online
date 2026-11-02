@@ -740,7 +740,8 @@ function watchRoom(code) {
 // 7. CREATE ROOM
 // ================================================
 
-async function createRoom() {
+
+async function joinRoom() {
 
   try {
     if (!currentUser) {
@@ -748,71 +749,135 @@ async function createRoom() {
     }
 
     const name = $("playerName").value.trim();
+    const code = $("joinCode").value.trim().toUpperCase();
 
     if (!name) {
       alert("Please enter your player name.");
       return;
     }
 
-    showStatus("Creating your room...");
+    if (!/^[A-HJ-NP-Z2-9]{8}$/.test(code)) {
+      alert("Please enter a valid 8-character room code.");
+      return;
+    }
 
-    let created = false;
-    let selectedCode = "";
+    showStatus("Checking room in Firebase: " + code);
 
-    for (let attempt = 0; attempt < 5; attempt++) {
+    const roomRef = ref(db, "rooms/" + code);
 
-      const code = makeRoomCode();
-      const roomRef = ref(db, "rooms/" + code);
+    // Step 1: Verify that the room exists on the server.
+    const check = await get(roomRef);
 
-      const player = {
-        uid: currentUser.uid,
-        name: name,
-        city: CITY_THINGS[0],
-        points: 1000,
-        joinOrder: 0,
-        score: 0,
-        hand: [],
-        joinedAt: Date.now()
-      };
+    if (!check.exists()) {
+      throw new Error(
+        "ROOM NOT FOUND: " + code +
+        " does not exist in Firebase project " +
+        firebaseConfig.projectId
+      );
+    }
 
-      const newRoom = {
-        roomCode: code,
-        hostUid: currentUser.uid,
-        status: "waiting",
-        createdAt: Date.now(),
+    // Step 2: Join using a transaction.
+    const transaction = await runTransaction(
+      roomRef,
 
-        players: {
-          [currentUser.uid]: player
-        },
+      current => {
 
-        game: null
-      };
+        // IMPORTANT FIX:
+        // Firebase may initially provide null because
+        // the room data is not locally cached.
+        // Return null, NOT undefined.
+        // Firebase can then retry with server data.
+        if (current === null) {
+          return null;
+        }
 
-      const result = await runTransaction(
-        roomRef,
-        current => {
-          if (current === null) {
-            return newRoom;
-          }
+        if (!current.players) {
+          current.players = {};
+        }
 
+        // Reconnecting existing player
+        if (current.players[currentUser.uid]) {
+
+          current.players[currentUser.uid].name = name;
+
+          return current;
+        }
+
+        // Room must still be waiting
+        if (current.status !== "waiting") {
           return;
         }
-      );
 
-      if (result.committed) {
-        created = true;
-        selectedCode = code;
-        break;
+        const count = Object.keys(current.players).length;
+
+        if (count >= MAX_PLAYERS) {
+          return;
+        }
+
+        const joinOrder = count;
+
+        if (joinOrder >= CITY_THINGS.length) {
+          return;
+        }
+
+        // Assign City/Thing and points automatically
+        current.players[currentUser.uid] = {
+          uid: currentUser.uid,
+          name: name,
+          city: CITY_THINGS[joinOrder],
+          points: (joinOrder + 1) * 1000,
+          joinOrder: joinOrder,
+          score: 0,
+          hand: [],
+          joinedAt: Date.now()
+        };
+
+        return current;
       }
-    }
+    );
 
-    if (!created) {
+    // Step 3: Check the final server result.
+    const finalRoom = transaction.snapshot.val();
+
+    if (!finalRoom) {
       throw new Error(
-        "Could not create a unique room. Please try again."
+        "ROOM NOT FOUND: Firebase returned an empty room. " +
+        "Ask the host to create a new room."
       );
     }
 
-    watchRoom(selectedCode);
+    if (!transaction.committed) {
+
+      if (finalRoom.status !== "waiting") {
+        throw new Error("This game has already started.");
+      }
+
+      const count = Object.keys(finalRoom.players || {}).length;
+
+      if (count >= MAX_PLAYERS) {
+        throw new Error("This room is full. Maximum 25 players.");
+      }
+
+      throw new Error(
+        "Joining was not completed. Please try again."
+      );
+    }
+
+    // Step 4: Confirm that this player was added.
+    if (!finalRoom.players?.[currentUser.uid]) {
+      throw new Error(
+        "Firebase did not save your player record."
+      );
+    }
+
+    // Step 5: Open the multiplayer room.
+    selectedCardId = null;
+    watchRoom(code);
+
+    showStatus(
+      "Successfully joined room " + code,
+      "success"
+    );
 
   } catch (error) {
     showError(error);
